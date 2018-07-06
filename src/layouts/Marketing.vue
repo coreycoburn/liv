@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <p>auth layout</p>
+        <p>marketing layout</p>
         <transition name="fade">
             <router-view/>
         </transition>
