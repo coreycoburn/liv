@@ -18,17 +18,17 @@
 </template>
 
 <script>
-import AppSidebar from "./partials/default/Sidebar";
-import AppHeader from "./partials/default/Header";
-import AppSubHeader from "./partials/default/SubHeader";
-import AppFooter from "./partials/default/Footer";
+import AppSidebar from './partials/default/Sidebar'
+import AppHeader from './partials/default/Header'
+import AppSubHeader from './partials/default/SubHeader'
+import AppFooter from './partials/default/Footer'
 
 export default {
-  components: {
-    AppSidebar,
-    AppHeader,
-    AppSubHeader,
-    AppFooter
-  }
-};
+    components: {
+        AppSidebar,
+        AppHeader,
+        AppSubHeader,
+        AppFooter
+    }
+}
 </script>
