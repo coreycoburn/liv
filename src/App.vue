@@ -1,15 +1,15 @@
 <template>
   <div id="app">
     <transition name="fade" mode="out-in">
-        <component :is="layout">
-            <router-view/>
-        </component>
+      <component :is="layout">
+        <router-view/>
+      </component>
     </transition>
   </div>
 </template>
 
 <script>
-const default_layout = "loading";
+const default_layout = "admin";
 
 export default {
   computed: {

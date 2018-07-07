@@ -1,5 +1,5 @@
 <template>
-    <div>
-        Dashboard ver. 1 here!
-    </div>
+  <div>
+    Dashboard ver. 1 here!
+  </div>
 </template>

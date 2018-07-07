@@ -2,7 +2,7 @@ export default [
   {
     path: "/",
     name: "home",
-    component: () => import("@/pages/Home"),
+    component: require("@/pages/Home").default, // load sync home
     meta: {
       layout: "marketing"
     }
