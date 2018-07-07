@@ -1,5 +1,5 @@
 <template>
-  <div class="w-1/5 h-screen sticky pin-t bg-brand-dark text-brand-lightest">
+  <div class="h-screen w-1/5 sticky pin-t bg-brand-dark text-brand-lightest">
     <div class="p-8 border-b-8 border-brand-light text-center">
       <router-link :to="{ name: 'home' }">logo here</router-link>
     </div>
