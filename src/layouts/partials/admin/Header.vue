@@ -18,8 +18,10 @@
         <transition name="fade">
           <input
             v-show="displaySearch"
+            v-on-clickaway="searchClickAway"
             id="search"
             class="appearance-none bg-transparent border-2 border-brand rounded-full px-4 py-2 outline-none ml-3 text-grey-darker"
+            placeholder="Search..."
             v-model="search"
           >
         </transition>
@@ -51,9 +53,11 @@
 
 <script>
 import Mousetrap from "mousetrap";
+import { mixin as clickaway } from "vue-clickaway";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
+  mixins: [clickaway],
   data() {
     return {
       displaySearch: false,
@@ -66,16 +70,6 @@ export default {
       e.preventDefault();
 
       this.searchToggle();
-    });
-
-    // Hide search input when losing focus
-    window.addEventListener("click", e => {
-      const search = document.getElementById("search");
-
-      if (!search.contains(e.target) && !e.target.matches("#search-button")) {
-        this.displaySearch = false;
-        this.search = "";
-      }
     });
   },
   computed: {
@@ -95,6 +89,12 @@ export default {
         setTimeout(() => {
           document.getElementById("search").focus();
         }, 300);
+      }
+    },
+    searchClickAway(event) {
+      if (!event.target.matches("#search-button")) {
+        this.displaySearch = false;
+        this.search = "";
       }
     }
   }
