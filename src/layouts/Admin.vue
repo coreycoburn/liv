@@ -18,10 +18,10 @@
 </template>
 
 <script>
-import AppSidebar from "./partials/default/Sidebar";
-import AppHeader from "./partials/default/Header";
-import AppSubHeader from "./partials/default/SubHeader";
-import AppFooter from "./partials/default/Footer";
+import AppSidebar from "./partials/admin/Sidebar";
+import AppHeader from "./partials/admin/Header";
+import AppSubHeader from "./partials/admin/SubHeader";
+import AppFooter from "./partials/admin/Footer";
 
 export default {
   components: {

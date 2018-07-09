@@ -3,7 +3,7 @@
     <div class="p-4 border-b-8 border-brand-light text-center">
       <router-link :to="{ name: 'home' }" class="text-brand-lightest hover:text-brand-lighter">
         <logo class="fill-current stroke-current h-12"/>
-        <span class="ml-16">by {{ company.name }}</span>
+        <div class="ml-16">by {{ company.name }}</div>
       </router-link>
     </div>
     <app-nav/>
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import AppNav from "@/layouts/partials/default/Navigation";
+import AppNav from "@/layouts/partials/admin/Navigation";
 import Logo from "@/assets/img/logo.svg";
 import { company } from "@/../app.config";
 

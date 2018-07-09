@@ -6,7 +6,7 @@
     <div class="flex-1 mr-32">
       <div class="border-b-2 border-brand opacity-50">
         <fa-icon icon="search" class="mr-2"/>
-        <input class="appearance-none bg-transparent outline-none">
+        <input id="search" class="appearance-none bg-transparent outline-none">
       </div>
     </div>
     <div class="flex justify-end items-center">
@@ -29,3 +29,16 @@
     </div>
   </div>
 </template>
+
+<script>
+import Mousetrap from "mousetrap";
+
+export default {
+  mounted() {
+    Mousetrap.bind("/", e => {
+      e.preventDefault();
+      document.getElementById("search").focus();
+    });
+  }
+};
+</script>
