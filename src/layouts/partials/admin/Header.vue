@@ -1,18 +1,37 @@
 <template>
   <div class="flex items-center bg-grey-lightest text-brand p-6 border-b">
-    <div class="mr-12">
-      <fa-icon icon="bars" class="text-brand" size="lg"/>
+    <div class="mr-8">
+      <button @click="toggleSidebar" class="focus:outline-none">
+        <template v-if="sidebarOpen">
+          <fa-icon icon="compress" class="text-brand hover:text-brand-dark" size="lg"/>
+        </template>
+        <template v-else>
+          <fa-icon icon="list" class="text-brand hover:text-brand-dark" size="lg"/>
+        </template>
+      </button>
     </div>
     <div class="flex-1 mr-32">
-      <div class="border-b-2 border-brand opacity-50">
-        <fa-icon icon="search" class="mr-2"/>
-        <input id="search" class="appearance-none bg-transparent outline-none">
+      <div>
+        <button class="focus:outline-none" @click="searchToggle">
+          <fa-icon id="search-button" icon="search" class="text-brand hover:text-brand-dark" size="lg"/>
+        </button>
+        <transition name="fade">
+          <input
+            v-show="displaySearch"
+            id="search"
+            class="appearance-none bg-transparent border-2 border-brand rounded-full px-4 py-2 outline-none ml-3 text-grey-darker"
+            v-model="search"
+          >
+        </transition>
       </div>
     </div>
     <div class="flex justify-end items-center">
       <div class="mr-6">
-        <div class="rounded-full h-8 w-8 flex items-center justify-center bg-brand">
+        <div class="relative rounded-full h-8 w-8 flex items-center justify-center bg-brand">
           <fa-icon icon="bell" class="text-white"/>
+          <span v-if="notificationTotal > 0" class="flex pin-t pin-r items-center justify-center absolute bg-red rounded-full w-5 h-5 text-xs text-white -mr-2 -mt-2">
+            {{ notificationTotal }}
+          </span>
         </div>
       </div>
       <div class="mr-6">
@@ -32,13 +51,52 @@
 
 <script>
 import Mousetrap from "mousetrap";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
+  data() {
+    return {
+      displaySearch: false,
+      search: ""
+    };
+  },
   mounted() {
+    // Allow user to type / to open search
     Mousetrap.bind("/", e => {
       e.preventDefault();
-      document.getElementById("search").focus();
+
+      this.searchToggle();
     });
+
+    // Hide search input when losing focus
+    window.addEventListener("click", e => {
+      const search = document.getElementById("search");
+
+      if (!search.contains(e.target) && !e.target.matches("#search-button")) {
+        this.displaySearch = false;
+        this.search = "";
+      }
+    });
+  },
+  computed: {
+    ...mapGetters({
+      notificationTotal: "admin/notificationTotal",
+      sidebarOpen: "admin/sidebarOpen"
+    })
+  },
+  methods: {
+    ...mapActions({
+      toggleSidebar: "admin/sidebarOpen"
+    }),
+    searchToggle() {
+      this.displaySearch = !this.displaySearch;
+
+      if (this.displaySearch) {
+        setTimeout(() => {
+          document.getElementById("search").focus();
+        }, 300);
+      }
+    }
   }
 };
 </script>

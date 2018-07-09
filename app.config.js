@@ -1,3 +1,4 @@
 export const company = {
-  name: "Liv Themes"
+  name: "Liv Themes",
+  nameShort: "Liv"
 };

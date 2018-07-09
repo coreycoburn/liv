@@ -1,4 +1,4 @@
-# For hosting with Netlify.
-# Enables history mode with the Vue Router.
+# For hosting with Netlify. (You may delete this file if not using Netlify)
 
+# Enables history mode with the Vue Router.
 /*    /index.html   200
