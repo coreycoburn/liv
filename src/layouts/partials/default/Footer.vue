@@ -1,10 +1,10 @@
 <template>
-  <div class="flex p-8 bg-grey-lightest text-sm">
+  <div class="flex p-8 bg-grey-lightest text-grey-dark text-sm">
     <div class="flex-1">
       Copyright © {{ year }}. 
-      <span class="uppercase text-md">
+      <span class="text-md uppercase">
         <a href="javascript:void(0);">{{ company.name }}</a>
-      </span>. 
+      </span>.
       All rights reserved.            
     </div>
     <div class="flex justify-end">

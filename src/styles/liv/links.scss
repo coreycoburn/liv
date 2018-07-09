@@ -1,0 +1,15 @@
+a {
+  @apply .text-brand .no-underline;
+
+  &:hover {
+    @apply .text-brand-dark;
+  }
+}
+
+nav a {
+  @apply .text-brand-lightest;
+
+  &:hover {
+    @apply .text-brand-light;
+  }
+}

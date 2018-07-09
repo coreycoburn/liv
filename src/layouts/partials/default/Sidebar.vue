@@ -1,22 +1,29 @@
 <template>
-  <div class="h-screen w-1/5 sticky pin-t bg-brand-dark text-brand-lightest">
-    <div class="p-8 border-b-8 border-brand-light text-center">
-      <router-link :to="{ name: 'home' }">logo here</router-link>
+  <div class="h-screen w-1/5 sticky pin-t bg-brand text-brand-lightest">
+    <div class="p-4 border-b-8 border-brand-light text-center">
+      <router-link :to="{ name: 'home' }" class="text-brand-lightest hover:text-brand-lighter">
+        <logo class="fill-current stroke-current h-12"/>
+        <span class="ml-16">by {{ company.name }}</span>
+      </router-link>
     </div>
-    <nav class="p-8">
-      <div>
-        <router-link :to="{ name: 'dashboard' }">Dashboard</router-link>
-      </div>
-      <ul class="list-reset">
-        <li><router-link :to="{ name: 'dashboard1' }">Ver. 1</router-link></li>
-        <li><a href="javascript:void(0);">Dashbaord 2</a></li>
-      </ul>
-      <div>Tables</div>
-      <div>Maps</div>
-      <ul class="list-reset">
-        <li><a href="javascript:void(0);">Vector Maps</a></li>
-        <li><a href="javascript:void(0);">Google Maps</a></li>
-      </ul>
-    </nav>
+    <app-nav/>
   </div>
 </template>
+
+<script>
+import AppNav from "@/layouts/partials/default/Navigation";
+import Logo from "@/assets/img/logo.svg";
+import { company } from "@/../app.config";
+
+export default {
+  components: {
+    AppNav,
+    Logo
+  },
+  data() {
+    return {
+      company
+    };
+  }
+};
+</script>

@@ -1,23 +1,30 @@
 <template>
-  <div class="flex bg-grey-lightest p-8 border-b">
-    <div class="mr-6">
-      hamburger
+  <div class="flex items-center bg-grey-lightest text-brand p-6 border-b">
+    <div class="mr-12">
+      <fa-icon icon="bars" class="text-brand" size="lg"/>
     </div>
-    <div class="flex-1">
-      <input class="appearance-none bg-transparent border-b-2 border-brand-dark outline-none">
+    <div class="flex-1 mr-32">
+      <div class="border-b-2 border-brand opacity-50">
+        <fa-icon icon="search" class="mr-2"/>
+        <input class="appearance-none bg-transparent outline-none">
+      </div>
     </div>
-    <div class="flex justify-end">
-      <div class="mr-3">
-        alerts
+    <div class="flex justify-end items-center">
+      <div class="mr-6">
+        <div class="rounded-full h-8 w-8 flex items-center justify-center bg-brand">
+          <fa-icon icon="bell" class="text-white"/>
+        </div>
       </div>
-      <div class="mr-3">
-        more options
+      <div class="mr-6">
+        <div class="rounded-full h-8 w-8 flex items-center justify-center bg-brand">
+          <fa-icon icon="grip-horizontal" class="text-white"/>
+        </div>
       </div>
-      <div class="mr-3">
-        profile
+      <div class="mr-6">
+        <img src="@/assets/img/user.png" class="rounded-full h-10 w-10">
       </div>
       <div>
-        sign out
+        <fa-icon icon="power-off" size="lg" class="text-blue-light"/>
       </div>
     </div>
   </div>
