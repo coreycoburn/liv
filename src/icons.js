@@ -11,6 +11,8 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faBars,
   faBell,
+  faCaretDown,
+  faCaretRight,
   faCompress,
   faGripHorizontal,
   faHome,
@@ -27,6 +29,8 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 library.add(
   faBars,
   faBell,
+  faCaretDown,
+  faCaretRight,
   faCompress,
   faGripHorizontal,
   faHome,

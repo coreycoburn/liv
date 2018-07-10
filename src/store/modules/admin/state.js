@@ -1,6 +1,6 @@
 export default {
   sidebarOpen: true,
   notifications: {
-    total: 3
+    total: 4
   }
 };
