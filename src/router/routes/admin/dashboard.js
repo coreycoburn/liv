@@ -5,7 +5,8 @@ export default [
     component: () => import("@/pages/dashboard/Index"),
     meta: {
       title: "Dashboard",
-      icon: "home"
+      icon: "home",
+      crumbs: "/My Foo/My Bar"
     },
     children: [
       {
